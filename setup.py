@@ -8,7 +8,7 @@ requirements = parse_requirements(os.path.join(os.path.dirname(__file__), 'requi
 
 setup(
     name='github_changes',
-    version='1.0.3',
+    version='1.0.5',
     author='danniel',
     author_email='danniel.shalev@gmail.com',
     description='A github file changes module',
