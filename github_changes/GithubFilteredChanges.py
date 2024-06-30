@@ -21,14 +21,12 @@ class GithubFilteredChanges:
 
     @property
     def session(self):
-        if not self.session:
-            return Github(self.token).get_organization(self.organization).get_repo(self.repo)
-        return self.session
+        return Github(self.token).get_organization(self.organization).get_repo(self.repo)
 
-    def _get_changed_files(self):
+    def get_changed_files(self):
         changed_files = []
         for change in self.session.get_commit(self.commit).files:
-            if change.status != 'removed' and self.path_to_eveluate in change.filename:
+            if change.status != 'removed' and self.path in change.filename:
                 changed_files.append(change.filename.split('/')[self.hierarchy])
         return set(changed_files)
 

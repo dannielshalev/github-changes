@@ -4,3 +4,4 @@ Pipfile.lock
 /.pypirc
 *.egg-info
 dist
+build/^
